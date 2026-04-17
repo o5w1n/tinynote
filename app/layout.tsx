@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "700"],
-});
 
 export const metadata: Metadata = {
-  title: "Tiny Notes AI",
-  description: "AI Assisted Note Application",
+  title: "TinyNote",
+  description: "A simple note-taking app with rich text editing",
 };
 
 export default function RootLayout({
@@ -20,10 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
-        <Analytics />
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
